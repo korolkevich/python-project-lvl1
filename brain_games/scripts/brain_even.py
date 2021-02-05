@@ -6,7 +6,7 @@ from random import randint
 
 def main():
     """Привествует в игре, а затем делает персональное привествие."""
-    welcome.main()
+    name = welcome.main()
     print('Answer "yes" if the number is even, otherwise answer "no".')
     for i in range(0, 3):
         random_number = randint(1, 100)
@@ -17,7 +17,7 @@ def main():
         if answer == correct_answer:
             print('Correct!')
             if i == 2:
-                print('Congratulations, Sam!')
+                print('Congratulations, {0}!'.format(name))
         else:
             print(
                 '\'{0}\' is wrong answer ;(. '
