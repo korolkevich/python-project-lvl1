@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.1.4"
+version = "0.1.5"
 description = ""
 authors = ["Mikhail Korolkevich <m.korolkevich@xsolla.com>"]
 packages = [
@@ -13,6 +13,7 @@ prompt = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
 wemake-python-styleguide = "^0.14.1"
+asciinema = "^2.0.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -21,3 +22,4 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
 brain-even = "brain_games.scripts.brain_even:main"
+barin-calc = "brain_games.scripts.brain_calc:main"

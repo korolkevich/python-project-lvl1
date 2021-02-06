@@ -1,4 +1,12 @@
 [[package]]
+name = "asciinema"
+version = "2.0.2"
+description = "Terminal session recorder"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "astor"
 version = "0.8.1"
 description = "Read/rewrite/write Python ASTs"
@@ -461,9 +469,12 @@ typing_extensions = ">=3.6,<4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "a91c1b3679748a8e9e9c493ffe94a7edadbc6d80e87d0021dbd521f6524541bc"
+content-hash = "e2e9ded057638b5d67ea5cffc208e5c9385b33f0288e861c9bfa3bf213eccb4e"
 
 [metadata.files]
+asciinema = [
+    {file = "asciinema-2.0.2.tar.gz", hash = "sha256:32f2c1a046564e030708e596f67e0405425d1eca9d5ec83cd917ef8da06bc423"},
+]
 astor = [
     {file = "astor-0.8.1-py2.py3-none-any.whl", hash = "sha256:070a54e890cefb5b3739d19f30f5a5ec840ffc9c50ffa7d23cc9fc1a38ebbfc5"},
     {file = "astor-0.8.1.tar.gz", hash = "sha256:6a6effda93f4e1ce9f618779b2dd1d9d84f1e32812c23a29b3fff6fd7f63fa5e"},
