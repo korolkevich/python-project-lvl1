@@ -3,10 +3,13 @@ from brain_games import cli
 
 
 def main():
-    """Привествует в игре, а затем делает персональное привествие."""
+    """Привествует в игре, а затем делает персональное привествие.
+
+    Returns:
+        Name user.
+    """
     print('Welcome to the Brain Games!')
-    name = cli.welcome_user()
-    return name
+    return cli.welcome_user()
 
 
 if __name__ == '__main__':
