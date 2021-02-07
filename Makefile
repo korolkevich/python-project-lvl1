@@ -23,5 +23,5 @@ lint:
 	poetry run flake8 brain_games
 
 asciinema:
-	poetry run asciinema rec
+	sudo poetry run asciinema rec
 
