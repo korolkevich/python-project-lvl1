@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "hexlet-code"
+version = "0.1.7"
+description = ""
+authors = ["Mikhail Korolkevich <m.korolkevich@xsolla.com>"]
+packages = [
+    { include = "brain_games" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+prompt = "^0.4.1"
+importlib-metadata = "^3.4.0"
+
+[tool.poetry.dev-dependencies]
+wemake-python-styleguide = "^0.14.1"
+asciinema = "^2.0.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+brain-games = "brain_games.scripts.brain_games:main"
+brain-even = "brain_games.scripts.brain_even:main"
+brain-calc = "brain_games.scripts.brain_calc:main"
+brain-gcd = "brain_games.scripts.brain_gcd:main"
+brain-progression = "brain_games.scripts.brain_progression:main"
+brain-prime = "brain_games.scripts.brain_prime:main"
