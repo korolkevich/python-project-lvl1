@@ -1,11 +1,11 @@
-"""Сборный модуль."""
+"""The Prefabricated module."""
 import prompt
 
 from brain_games import cli
 
 
 def main():
-    """Привествует в игре, а затем делает персональное привествие.
+    """Greets in-game and then makes a personalized greeting.
 
     Returns:
         Name user.
@@ -15,10 +15,10 @@ def main():
 
 
 def ask_question(function):
-    """Проверяет результаты ответов.
+    """Return the results of the responses.
 
     Args:
-        function: Аргумент вопроса.
+        function: The argument of the question.
 
     Returns:
         Correct answer.
@@ -31,15 +31,15 @@ def ask_question(function):
 
 
 def game_flow(name, statement_generation):
-    """Функция определяющая правила игры.
+    """Run the game.
 
     Args:
-        statement_generation: функция генератор условия.
-        name: Имя игрока.
+        statement_generation: The condition generator function.
+        name: Name player.
     """
     total_attempts = 3
     for attempt in range(0, total_attempts):  # noqa:WPS122
-        answer, correct_answer = ask_question(statement_generation)
+        correct_answer, answer = ask_question(statement_generation)
         if answer == correct_answer:
             print('Correct!')
             if attempt == 2:
@@ -51,10 +51,10 @@ def game_flow(name, statement_generation):
 
 
 def welcome(rules):
-    """Привествует в игре, а затем объявляет правила игры.
+    """Welcomes you to the game, and then announces the rules of the game.
 
     Args:
-        rules: Описание правил игры.
+        rules: Description of the game rules.
 
     Returns:
         Name user.

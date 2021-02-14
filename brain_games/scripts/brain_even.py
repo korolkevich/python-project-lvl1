@@ -1,4 +1,4 @@
-"""Сборный модуль."""
+"""Game. Find even numbers."""
 from random import randint
 
 from brain_games.scripts import brain_games as sc
@@ -17,7 +17,7 @@ def statement_generation():
 
 
 def main():
-    """Привествует в игре, а затем делает персональное привествие."""
+    """Game flow."""
     rules = 'Answer "yes" if the number is even, otherwise answer "no".'
     name = sc.welcome(rules)
     sc.game_flow(name, statement_generation)
