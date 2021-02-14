@@ -3,3 +3,5 @@ venv
 .idea
 /brain-games/.idea/
 /brain-games/scripts/.idea/
+**/__pycache__
+/__pycache__

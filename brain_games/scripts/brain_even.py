@@ -1,7 +1,10 @@
 """Game. Find even numbers."""
 from random import randint
 
-from brain_games.scripts import brain_games as sc
+from brain_games.scripts import brain_core as sc
+
+START_RANGE = 1
+END_RANGE = 100
 
 
 def statement_generation():
@@ -11,7 +14,7 @@ def statement_generation():
         question_arg: Random number.
         correct_answer: True if prime else False.
     """
-    question_arg = randint(1, 100)  # noqa:S311
+    question_arg = randint(START_RANGE, END_RANGE)  # noqa:S311
     correct_answer = 'yes' if question_arg % 2 == 0 else 'no'
     return question_arg, correct_answer
 

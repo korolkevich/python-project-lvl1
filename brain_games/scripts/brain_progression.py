@@ -1,7 +1,7 @@
 """Game. Find number is missing in the progression."""
 from random import randint
 
-from brain_games.scripts import brain_games as sc
+from brain_games.scripts import brain_core as sc
 
 
 def generate_progression():
@@ -37,10 +37,11 @@ def statement_generation():
         correct_answer: hid number.
     """
     regression = generate_progression()
-    hide_index = randint(0, len(regression))  # noqa:S311
+    hide_index = randint(0, len(regression) - 1)  # noqa:S311
     correct_answer = str(regression[hide_index])
     regression[hide_index] = '..'
-    question_arg = str(regression)[1:-1]
+    question_arg = str(regression)[1:-1].replace(', ', ' ')
+    question_arg = question_arg.replace("'", '')
     return question_arg, correct_answer
 
 
