@@ -39,7 +39,7 @@ def game_flow(name, statement_generation):
     """
     total_attempts = 3
     for attempt in range(0, total_attempts):  # noqa:WPS122
-        answer, correct_answer = ask_question(statement_generation)
+        correct_answer, answer = ask_question(statement_generation)
         if answer == correct_answer:
             print('Correct!')
             if attempt == 2:

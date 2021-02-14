@@ -20,7 +20,7 @@ def calculation(number_one, number_two, operation):
     elif operation == '-':
         return number_one - number_two
     elif operation == '*':
-        return number_one - number_two
+        return number_one * number_two
 
 
 def statement_generation():
@@ -31,10 +31,10 @@ def statement_generation():
         correct_answer: True if prime else False.
     """
     operation = ['-', '+', '*'][randint(0, 2)]  # noqa:S311
-    number_one = randint(1, 100)  # noqa:S311
-    number_two = randint(1, 100)  # noqa:S311
-    correct_answer = calculation(number_one, number_two, operation)
-    question_arg = '{0} {1} {2}'.format(number_one, number_two, operation)
+    number_one = randint(1, 50)  # noqa:S311
+    number_two = randint(1, 50)  # noqa:S311
+    correct_answer = str(calculation(number_one, number_two, operation))
+    question_arg = '{0} {1} {2}'.format(number_one, operation, number_two)
     return question_arg, correct_answer
 
 

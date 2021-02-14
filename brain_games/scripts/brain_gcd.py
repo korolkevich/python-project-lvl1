@@ -31,7 +31,7 @@ def statement_generation():
     """
     number_one = randint(1, 100)  # noqa:S311
     number_two = randint(1, 100)  # noqa:S311
-    correct_answer = calculation(number_one, number_two)
+    correct_answer = str(calculation(number_one, number_two))
     question_arg = '{0} {1}'.format(number_one, number_two)
     return question_arg, correct_answer
 
