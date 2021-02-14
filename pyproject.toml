@@ -1,19 +1,24 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.1.8"
-description = ""
+version = "0.2.0"
+description = "Educational project with games."
 authors = ["Mikhail Korolkevich <m.korolkevich@xsolla.com>"]
 packages = [
     { include = "brain_games" },
 ]
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+repository = "https://github.com/korolkevich/python-project-lvl1"
 
 [tool.poetry.dependencies]
 python = "^3.6"
 prompt = "^0.4.1"
-importlib-metadata = "^3.4.0"
 
 [tool.poetry.dev-dependencies]
 wemake-python-styleguide = "^0.14.1"
+importlib-metadata = "^3.4.0"
 asciinema = "^2.0.2"
 
 [build-system]
