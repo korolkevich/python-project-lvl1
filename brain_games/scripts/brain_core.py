@@ -47,6 +47,7 @@ def game_flow(name, statement_generation):
         else:
             text = '"{0}" is wrong answer ;(. Correct answer was "{1}".'
             print(text.format(answer, correct_answer))
+            print("Let's try again, {0}!").format(name)
             break
 
 
