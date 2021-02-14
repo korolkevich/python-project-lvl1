@@ -35,7 +35,7 @@ def statement_generation():
 
 
 def main():
-    """Привествует в игре, а затем делает персональное привествие."""
+    """Game flow."""
     rules = 'Answer "yes" if given number is prime. Otherwise answer "no".'
     name = sc.welcome(rules)
     sc.game_flow(name, statement_generation)
