@@ -1,7 +1,7 @@
 """Сборный модуль."""
-from brain_games import cli
-
 import prompt
+
+from brain_games import cli
 
 
 def main():
@@ -14,18 +14,17 @@ def main():
     return cli.welcome_user()
 
 
-def ask_question(question_arg, correct_answer):
+def ask_question(function):
     """Проверяет результаты ответов.
 
     Args:
-        question_arg: Аргумент вопроса.
-        correct_answer: Правильный ответ.
-    Returns:
-        Correct answer
-        User answer
-    """
+        function: Аргумент вопроса.
 
-    # question_arg, correct_answer = statement_generation()
+    Returns:
+        Correct answer.
+        User answer.
+    """
+    question_arg, correct_answer = function()
     print('Question: {0}'.format(question_arg))
     answer = prompt.string('Your answer: ')
     return correct_answer, answer
@@ -37,12 +36,10 @@ def game_flow(name, statement_generation):
     Args:
         statement_generation: функция генератор условия.
         name: Имя игрока.
-
     """
     total_attempts = 3
     for attempt in range(0, total_attempts):  # noqa:WPS122
-        question_arg, correct_answer = statement_generation()
-        answer, correct_answer = ask_question(question_arg, correct_answer)
+        answer, correct_answer = ask_question(statement_generation)
         if answer == correct_answer:
             print('Correct!')
             if attempt == 2:
@@ -58,6 +55,7 @@ def welcome(rules):
 
     Args:
         rules: Описание правил игры.
+
     Returns:
         Name user.
     """

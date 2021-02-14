@@ -1,20 +1,7 @@
 """Сборный модуль."""
 from random import randint
 
-import prompt
-
 from brain_games.scripts import brain_games as sc
-
-
-def welcome():
-    """Привествует в игре, а затем объявляет правила игры.
-
-    Returns:
-        Name user.
-    """
-    name = sc.main()
-    print('What is the result of the expression?')
-    return name
 
 
 def calculation(number_one, number_two, operation):
@@ -36,35 +23,26 @@ def calculation(number_one, number_two, operation):
         return number_one - number_two
 
 
-def ask_question():
-    """Проверяет результаты ответов.
+def statement_generation():
+    """Statement of the task condition.
 
     Returns:
-        Correct answer
-        User answer
+        question_arg: Random number.
+        correct_answer: True if prime else False.
     """
     operation = ['-', '+', '*'][randint(0, 2)]  # noqa:S311
     number_one = randint(1, 100)  # noqa:S311
     number_two = randint(1, 100)  # noqa:S311
     correct_answer = calculation(number_one, number_two, operation)
-    print('Question: {0} {1} {2}'.format(number_one, number_two, operation))
-    answer = prompt.string('Your answer: ')
-    return correct_answer, answer
+    question_arg = '{0} {1} {2}'.format(number_one, number_two, operation)
+    return question_arg, correct_answer
 
 
 def main():
     """Привествует в игре, а затем делает персональное привествие."""
-    name = welcome()
-    for attempt in range(0, 3):  # noqa:WPS122
-        answer, correct_answer = ask_question()
-        if answer == correct_answer:
-            print('Correct!')
-            if attempt == 2:
-                print('Congratulations, {0}!'.format(name))
-        else:
-            text = '"{0}" is wrong answer ;(. Correct answer was "{1}".'
-            print(text.format(answer, correct_answer))
-            break
+    rules = 'What is the result of the expression?'
+    name = sc.welcome(rules)
+    sc.game_flow(name, statement_generation)
 
 
 if __name__ == '__main__':

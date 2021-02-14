@@ -1,56 +1,46 @@
 """Сборный модуль."""
 from random import randint
 
-import prompt
-
 from brain_games.scripts import brain_games as sc
 
 
-def welcome():
-    """Привествует в игре, а затем объявляет правила игры.
+def calculation(num_a, num_b):
+    """Find the greatest common divisor of given numbers.
+
+    Args:
+        num_a: First number.
+        num_b: Second number.
 
     Returns:
-        Name user.
+        Greatest common divisor of given numbers.
     """
-    name = sc.main()
-    print('Find the greatest common divisor of given numbers.')
-    return name
+    if num_a == 0 or num_b == 0:
+        return max(num_a, num_b)
+    elif num_a >= num_b:
+        return calculation(num_a % num_b, num_b)
+    elif num_b >= num_a:
+        return calculation(num_a, num_b % num_a)
 
 
-def calculation(a, b):
-    if a == 0 or b == 0: return max(a, b)
-    if a >= b: return calculation(a % b, b)
-    if b >= a: return calculation(a, b % a)
-
-
-def ask_question():
-    """Проверяет результаты ответов.
+def statement_generation():
+    """Statement of the task condition.
 
     Returns:
-        Correct answer
-        User answer
+        question_arg: Random number.
+        correct_answer: True if prime else False.
     """
     number_one = randint(1, 100)  # noqa:S311
     number_two = randint(1, 100)  # noqa:S311
     correct_answer = calculation(number_one, number_two)
-    print('Question: {0} {1}'.format(number_one, number_two))
-    answer = prompt.string('Your answer: ')
-    return correct_answer, answer
+    question_arg = '{0} {1}'.format(number_one, number_two)
+    return question_arg, correct_answer
 
 
 def main():
-    """Привествует в игре, а затем делает персональное привествие."""
-    name = welcome()
-    for attempt in range(0, 3):  # noqa:WPS122
-        answer, correct_answer = ask_question()
-        if answer == correct_answer:
-            print('Correct!')
-            if attempt == 2:
-                print('Congratulations, {0}!'.format(name))
-        else:
-            text = '"{0}" is wrong answer ;(. Correct answer was "{1}".'
-            print(text.format(answer, correct_answer))
-            break
+    """Game flow."""
+    rules = 'Find the greatest common divisor of given numbers.'
+    name = sc.welcome(rules)
+    sc.game_flow(name, statement_generation)
 
 
 if __name__ == '__main__':

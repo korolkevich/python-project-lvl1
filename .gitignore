@@ -1,4 +1,5 @@
 .venv
+venv
 .idea
 /brain-games/.idea/
 /brain-games/scripts/.idea/

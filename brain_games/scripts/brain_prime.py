@@ -1,18 +1,17 @@
 """Сборный модуль."""
 from random import randint
 
-import prompt
-
 from brain_games.scripts import brain_games as sc
 
 
 def is_prime(num):
-    """Функция определения правильных чисел.
+    """Calculate given number is prime.
 
     Args:
-        num: Входное число для проверки.
+        num: given number.
+
     Returns:
-        True | False для данного числа.
+        Boolean values prime or not.
     """
     if num % 2 == 0:
         return num == 2
@@ -23,9 +22,9 @@ def is_prime(num):
 
 
 def statement_generation():
-    """Функуия поределения условия задачи.
+    """Statement of the task condition.
 
-    Return:
+    Returns:
         question_arg: Random number.
         correct_answer: True if prime else False.
     """
@@ -36,7 +35,7 @@ def statement_generation():
 
 
 def main():
-    """Привествует в игре, а затем делает персональное привествие."""
+    """Game flow."""
     rules = 'Answer "yes" if given number is prime. Otherwise answer "no".'
     name = sc.welcome(rules)
     sc.game_flow(name, statement_generation)
