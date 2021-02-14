@@ -1,7 +1,7 @@
 """Game. Find prime number."""
 from random import randint
 
-from brain_games.scripts import brain_games as sc
+from brain_games.scripts import brain_core as sc
 
 
 def is_prime(num):
