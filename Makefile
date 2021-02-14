@@ -31,6 +31,6 @@ package-install:
 lint:
 	poetry run flake8 brain_games
 
-asciinema:
+rec:
 	sudo poetry run asciinema rec
 
