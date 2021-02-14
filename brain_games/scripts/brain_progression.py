@@ -37,7 +37,7 @@ def statement_generation():
         correct_answer: hid number.
     """
     regression = generate_progression()
-    hide_index = randint(0, len(regression))  # noqa:S311
+    hide_index = randint(0, len(regression) - 1)  # noqa:S311
     correct_answer = str(regression[hide_index])
     regression[hide_index] = '..'
     question_arg = str(regression)[1:-1]
