@@ -1,11 +1,11 @@
-"""Сборный модуль."""
+"""Game. Calculate result of the expression."""
 from random import randint
 
 from brain_games.scripts import brain_games as sc
 
 
 def calculation(number_one, number_two, operation):
-    """Производит математические операции.
+    """Get mathematical operations.
 
     Args:
         number_one: Number one who be calculated.
@@ -39,7 +39,7 @@ def statement_generation():
 
 
 def main():
-    """Привествует в игре, а затем делает персональное привествие."""
+    """Game flow."""
     rules = 'What is the result of the expression?'
     name = sc.welcome(rules)
     sc.game_flow(name, statement_generation)

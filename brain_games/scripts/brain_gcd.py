@@ -1,4 +1,4 @@
-"""Сборный модуль."""
+"""Game. Find the greatest common divisor."""
 from random import randint
 
 from brain_games.scripts import brain_games as sc
