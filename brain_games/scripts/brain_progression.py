@@ -40,7 +40,7 @@ def statement_generation():
     hide_index = randint(0, len(regression) - 1)  # noqa:S311
     correct_answer = str(regression[hide_index])
     regression[hide_index] = '..'
-    question_arg = str(regression)[1:-1]
+    question_arg = str(regression)[1:-1].replace(', ', ' ').replace('\'', '')
     return question_arg, correct_answer
 
 
